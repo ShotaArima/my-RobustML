@@ -2,9 +2,9 @@
 
 ## Build
 ```shell
-docker build -t jlab:latest
+docker build -t jlab:latest /Users/shota/Documents/projects/docker-jupyter
 ```
-    ※`jlab`の部分はコンテナ名であり、好きに設定可能
+※`jlab`の部分はコンテナ名であり、好きに設定可能
 ```shell
 Successfully built (IMAGE ID) //この文字が出力されたらOK
 ```
