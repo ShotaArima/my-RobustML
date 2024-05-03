@@ -1,5 +1,5 @@
 # ベースイメージの設定
-FROM ubuntsu:latest
+FROM ubuntu:latest
 
 # 任意のコマンドの実行
 # aptを最新にし、sudo, wget, vimコマンドをインストール
