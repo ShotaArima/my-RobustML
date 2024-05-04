@@ -1,1 +1,17 @@
 .Trash-0/
+
+# Jupyter Notebook チェックポイントファイル
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# 一時ファイル
+*.tmp
+*.swp
+*.swo
+
+# マウントしたディレクトリ内の無関係なファイル
+src/.ipynb_checkpoints/
+src/*/.ipynb_checkpoints/*
+src/*.tmp
+src/*.swp
+src/*.swo
