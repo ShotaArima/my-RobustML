@@ -1,10 +1,28 @@
-FROM python:3.9
+# ベースイメージの指定
+FROM continuumio/miniconda3:latest
 
-RUN pip install jupyter
+# wgetとunzipをインストール
+RUN apt-get update && apt-get install -y wget unzip
 
-RUN mkdir /project
-WORKDIR /project
+# environment.ymlをコピーして環境を作成
+COPY environment.yml /tmp/
+RUN conda env create -f /tmp/environment.yml
 
-RUN apt-get update && apt-get install -y nano
+# デフォルトでAnaconda環境をアクティブ化
+SHELL ["/bin/bash", "-c"]
 
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
+# 作業ディレクトリを設定
+WORKDIR /src/
+
+# matplotlibの設定ファイルをコピー
+COPY matplotlibrc /src/.config/matplotlib/
+
+# ポートの公開
+EXPOSE 8888
+
+# 日本語フォントの設定
+RUN wget -O font.zip "https://moji.or.jp/wp-content/ipafont/IPAexfont/ipaexg00401.zip"
+RUN unzip font.zip
+RUN cp ipaexg00401/ipaexg.ttf /opt/conda/envs/pymc_env/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
+RUN echo "font.family : IPAexGothic" >>  /opt/conda/envs/pymc_env/lib/python3.11/site-packages/matplotlib/mpl-data/matplotlibrc
+# RUN rm -r ./.cache

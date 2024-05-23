@@ -1,17 +1,42 @@
-.Trash-0/
-
-# Jupyter Notebook チェックポイントファイル
-.ipynb_checkpoints/
+# Jupyter Notebook
+.ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-# 一時ファイル
-*.tmp
-*.swp
-*.swo
+# IPython
+profile_default/
+ipython_config.py
 
-# マウントしたディレクトリ内の無関係なファイル
-src/.ipynb_checkpoints/
-src/*/.ipynb_checkpoints/*
-src/*.tmp
-src/*.swp
-src/*.swo
+# Jupyter Notebook をビルドする際に生成されるファイル
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook のカスタムランチャーを使用する際に生成されるファイル
+.jupyter/jupyter_notebook_config.json
+
+# データファイル、CSVファイル、モデルファイルなど（必要に応じて）
+*.csv
+*.pkl
+*.h5
+*.model
+
+# 環境固有のファイル（必要に応じて）
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ログファイル（必要に応じて）
+*.log
+
+# OS固有のファイル（必要に応じて）
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
