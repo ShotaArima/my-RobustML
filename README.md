@@ -1,6 +1,19 @@
 # docker-jupyter
 このリポジトリを`fork`してご使用ください。
 雛形として自分の好きなライブラリやバージョンでコンテナを実行してください。
+**自分の新しいリポジトリで管理する場合**
+```shell
+mkdir (任意のディレクトリ名)
+cd (先ほどのディレクトリ名)
+git clone git@github.com:ShotaArima/docker-jupyter.git
+git remote remove origin
+```
+自分のgithubのサイトから新しくリポジトリを作成する。
+ターミナルに戻り以下のコマンドを打ちます。
+```shell
+git remote add origin (新しく決めたリポジトリのsshまたはhttpのコード)
+git push -u origin main
+```
 
 ## ライブラリやバージョンの設定
 このコンテナは、ベースイメージがminicondaを採用しています。
