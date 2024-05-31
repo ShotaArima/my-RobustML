@@ -62,5 +62,29 @@ docker compose up -d # run
     ```python
     print("Hello World!")
     ```
-## matplotlibの日本語設定
-1.  先ほどの
+## (iii). matplotlibの日本語フォントの設定
+1.  先ほどの`tmp.ipynb`を開いたまま、次のブロックに以下のコードを実行してください。
+    ```python
+    !find / -name "ttf"
+    ```
+    結果の中から、`opt/conda/envs/.../ttf`というディレクトリのものを探し、コピーします。
+    `...`の部分は、自分の環境によって異なります。
+2. dockerfileの一部を書き換えます。
+    先ほどコピーしたディレクトリに`/ipaexg.ttf`をつけて内の以下の部分を書き換えます。
+    {}の部分に先ほどのディレクトリを書いてください。
+    ```dockerfile
+    # RUN cp ipaexg00401/ipaexg.ttf {/opt/conda/envs/~/ttf}/ipaexg.ttf
+    ```
+3. `tmp.ipynb`に戻り以下のコードを実行してください。
+    ```python
+    !find / -name "matplotlibrc"
+    ```
+    結果の中から、`/opt/conda/.../matplotlibrc`というディレクトリを探し、コピーします。
+    `...`の部分は、自分の環境によって異なります。
+4. dockerfileの一部を書き換えます。
+    先ほどのコピーしたディレクトリを{}の部分にそのまま置き換えます。
+    ```dockerfile
+    # RUN echo "font.family : IPAexGothic" >>  {/opt/conda/~/matplotlibrc}
+    ```
+5. dockerfile内の`#日本語フォントの設定`の下のコード全てのコメントアウトを解除します。
+6. コンテナを起動し、問題がないことを確認してください。
