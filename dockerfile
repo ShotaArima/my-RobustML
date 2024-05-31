@@ -14,15 +14,11 @@ SHELL ["/bin/bash", "-c"]
 # 作業ディレクトリを設定
 WORKDIR /src/
 
-# matplotlibの設定ファイルをコピー
-COPY matplotlibrc /src/.config/matplotlib/
-
 # ポートの公開
 EXPOSE 8888
 
 # 日本語フォントの設定
-RUN wget -O font.zip "https://moji.or.jp/wp-content/ipafont/IPAexfont/ipaexg00401.zip"
-RUN unzip font.zip
-RUN cp ipaexg00401/ipaexg.ttf /opt/conda/envs/pymc_env/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf
-RUN echo "font.family : IPAexGothic" >>  /opt/conda/envs/pymc_env/lib/python3.11/site-packages/matplotlib/mpl-data/matplotlibrc
-# RUN rm -r ./.cache
+# RUN wget -O font.zip "https://moji.or.jp/wp-content/ipafont/IPAexfont/ipaexg00401.zip"
+# RUN unzip font.zip
+# RUN cp ipaexg00401/ipaexg.ttf {/opt/conda/envs/~/ttf/ipaexg.ttf}
+# RUN echo "font.family : IPAexGothic" >>  ${/opt/conda/~/matplotlibrc}
