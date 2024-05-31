@@ -58,3 +58,9 @@ docker compose up -d # run
 4. パスワードを入力する
 
 5. pythonカーネルを選択する
+6. `src/tmp.ipynb`pythonのコードが実行できるかどうかを確認する
+    ```python
+    print("Hello World!")
+    ```
+## matplotlibの日本語設定
+1.  先ほどの
