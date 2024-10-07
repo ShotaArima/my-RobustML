@@ -1,18 +1,20 @@
 # ベースイメージの指定
-FROM continuumio/miniconda3:latest
+FROM python:3.8
 
 # wgetとunzipをインストール
 RUN apt-get update && apt-get install -y wget unzip
 
-# environment.ymlをコピーして環境を作成
-COPY environment.yml /tmp/
-RUN conda env create -f /tmp/environment.yml
+# 作業ディレクトリを設定
+WORKDIR /src/
 
+# requirements.txtをコピーして環境を作成
+COPY src/requirements.txt /src/
+RUN #conda env create -f /tmp/environment.yml
+RUN pip install -r requirements.txt
 # デフォルトでAnaconda環境をアクティブ化
 SHELL ["/bin/bash", "-c"]
 
-# 作業ディレクトリを設定
-WORKDIR /src/
+
 
 # ポートの公開
 EXPOSE 8888
