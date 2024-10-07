@@ -9,4 +9,4 @@ services:
       - "9003:9003"
     environment:
       - JUPYTER_ENEBLE_LAB=yes
-    command: ["conda", "run", "-n", "robustml", "jupyter", "notebook", "--ip=0.0.0.0", "--port=9003", "--allow-root", "--no-browser", "--NotebookApp.password=argon2:$$argon2id$$v=19$$m=10240,t=10,p=8$$3f018paj32r2GVtPEzbArQ$$GpMMRbG6qqk9szynEmyuB6rAkmNy6ejGBRBuEgQ1Km4"]
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--port=9003", "--allow-root", "--no-browser", "--NotebookApp.password=argon2:$$argon2id$$v=19$$m=10240,t=10,p=8$$3f018paj32r2GVtPEzbArQ$$GpMMRbG6qqk9szynEmyuB6rAkmNy6ejGBRBuEgQ1Km4"]

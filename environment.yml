@@ -3,11 +3,6 @@ name: robustml
 channels:
   - conda-forge
 dependencies:
-  - python
-  - numpy
-  - pandas
-  - matplotlib
-  - scipy
   - jupyter
   - absl-py=0.13.0
   - astunparse=1.6.3
