@@ -15,7 +15,7 @@ __pycache__/
 .jupyter/jupyter_notebook_config.json
 
 # データファイル、CSVファイル、モデルファイルなど（必要に応じて）
-#*.csv
+*.csv
 *.pkl
 *.h5
 *.model
